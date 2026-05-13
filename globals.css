@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0c10;
+  --surface: #111318;
+  --surface2: #181c24;
+  --border: #222632;
+  --accent: #00d4ff;
+  --accent2: #7c5cfc;
+  --accent3: #ff6b35;
+  --gold: #f5c842;
+  --green: #22d17a;
+  --red: #ff4757;
+  --text: #e8eaf0;
+  --muted: #7a8099;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #2c3142; }
+
+@layer components {
+  .lp-card {
+    @apply bg-[#111318] border border-[#222632] rounded-xl;
+  }
+  .lp-input {
+    @apply w-full bg-[#181c24] border border-[#222632] rounded-lg px-3 py-2.5 text-sm
+           text-[#e8eaf0] placeholder-[#7a8099] outline-none transition-colors
+           focus:border-[#00d4ff] focus:ring-2 focus:ring-[#00d4ff]/20;
+  }
+  .lp-label {
+    @apply block text-xs uppercase tracking-wider font-medium text-[#7a8099] mb-1.5 font-mono;
+  }
+  .lp-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg
+           bg-[#00d4ff] hover:bg-[#00b8e6] text-[#0a0c10] font-semibold text-sm
+           transition-all disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .lp-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg
+           bg-[#181c24] hover:bg-[#222632] border border-[#222632] hover:border-[#00d4ff]
+           text-[#e8eaf0] font-medium text-sm transition-all;
+  }
+  .lp-btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-3 py-2 rounded-lg
+           hover:bg-[#181c24] text-[#7a8099] hover:text-[#e8eaf0] text-sm transition-all;
+  }
+  .lp-tag {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[11px]
+           font-mono uppercase tracking-wider font-medium;
+  }
+  .lp-section-title {
+    @apply font-display font-bold text-xl text-[#e8eaf0];
+  }
+  .lp-text-gradient {
+    background: linear-gradient(135deg, #e8eaf0 0%, #a0a8c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
